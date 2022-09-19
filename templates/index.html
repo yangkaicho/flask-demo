@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <style>
+        #date {
+            display: inline-block;
+            padding: 6px;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body onload="getTime()">
+    <!--jinja2-->
+    <h1>Hello,{{user_name}}
+
+        <p id="date">
+            {{date}}
+        </p>
+
+
+
+    </h1>
+    <a href="/stock" target="_blank">亞股資訊</a>
+
+    <script>
+        const timeEl = document.querySelector("#date");
+        function getTime() {
+
+            let date = new Date();
+
+            timeEl.innerText = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}\
+            ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+            setTimeout(getTime, 1000);
+        }
+    </script>
+</body>
+
+</html>

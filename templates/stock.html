@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+
+
+        }
+
+        strong {
+            font-size: 50px;
+        }
+
+        .table {
+
+            width: 250px;
+            margin: 12px auto;
+            font-size: 24px;
+            background-color: coral;
+            padding: 6px;
+            border-radius: 6px;
+            color: white;
+        }
+
+        #date {
+            font-size: 18px;
+
+
+        }
+    </style>
+</head>
+
+<body onload="getTime()">
+    <div id="container">
+        <strong> 亞股市場資訊</strong>
+        <br>
+        <span id="date">
+            {{date}}
+        </span>
+
+
+        {% for stock in stocks %}
+        <li class="table">{{stock["分類"]}}-{{stock["指數"]}}</li>
+        {% endfor %}
+        <p>
+            <a href="/">首頁</a>
+        </p>
+    </div>
+
+    <script>
+        const timeEl = document.querySelector("#date");
+        function getTime() {
+
+            let date = new Date();
+
+            timeEl.innerText = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}\
+            ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+            setTimeout(getTime, 1000);
+        }
+    </script>
+</body>
+
+</html>
