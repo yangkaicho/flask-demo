@@ -31,20 +31,11 @@
     <ul>
         <li><a href="/stock" target="_blank">亞股資訊</a></li>
         <li><a href="/pm25">PM2.5全台資訊</a></li>
+        <li><a href="/pm25-charts">PM2.5全台資訊圖</a></li>
 
     </ul>
 
-    <script>
-        const timeEl = document.querySelector("#date");
-        function getTime() {
-
-            let date = new Date();
-
-            timeEl.innerText = `${date.getFullYear()}-${String(date.getMonth() + 1).padstart(2, "0")}-${date.getDate()}\
-            ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-            setTimeout(getTime, 1000);
-        }
-    </script>
+    <script src="{{url_for('static',filename='./js/main.js')}}"></script>
 </body>
 
 </html>

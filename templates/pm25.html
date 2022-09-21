@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PM2.5全台資訊</title>
     <link rel="stylesheet" href="{{url_for('static',filename='css/pm25.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src=""></script>
 </head>
 
 <body>
@@ -18,7 +20,7 @@
             {{date}}
         </p>
         <form action="/pm25" method="POST">
-            <input type="submit" value="排序">
+            <input type="submit" value="排序" id="sort">
         </form>
         <table border="1">
             <thead>
@@ -55,6 +57,7 @@
 
 
     </div>
+
 </body>
 
 </html>
