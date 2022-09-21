@@ -28,7 +28,11 @@
 
 
     </h1>
-    <a href="/stock" target="_blank">亞股資訊</a>
+    <ul>
+        <li><a href="/stock" target="_blank">亞股資訊</a></li>
+        <li><a href="/pm25">PM2.5全台資訊</a></li>
+
+    </ul>
 
     <script>
         const timeEl = document.querySelector("#date");
@@ -36,7 +40,7 @@
 
             let date = new Date();
 
-            timeEl.innerText = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}\
+            timeEl.innerText = `${date.getFullYear()}-${String(date.getMonth() + 1).padstart(2, "0")}-${date.getDate()}\
             ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
             setTimeout(getTime, 1000);
         }

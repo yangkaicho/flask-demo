@@ -6,43 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首頁</title>
-    <style>
-        body {
-            background-color: antiquewhite;
-        }
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/main.css' )}}">
 
-        #container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-
-
-        }
-
-        strong {
-            font-size: 50px;
-        }
-
-        .table {
-
-            width: 250px;
-            margin: 12px auto;
-            font-size: 24px;
-            background-color: coral;
-            padding: 6px;
-            border-radius: 6px;
-            color: white;
-        }
-
-        #date {
-            font-size: 18px;
-
-
-        }
-    </style>
 </head>
 
-<body onload="getTime()">
+<body onload=" getTime()">
     <div id="container">
         <strong> 亞股市場資訊</strong>
         <br>

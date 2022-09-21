@@ -1,0 +1,32 @@
+body {
+    background-color: antiquewhite;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+
+}
+
+strong {
+    font-size: 50px;
+}
+
+.table {
+
+    width: 250px;
+    margin: 12px auto;
+    font-size: 24px;
+    background-color: coral;
+    padding: 6px;
+    border-radius: 6px;
+    color: white;
+}
+
+#date {
+    font-size: 18px;
+
+
+}

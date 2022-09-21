@@ -1,0 +1,55 @@
+body {
+    background-color: antiquewhite;
+}
+
+#contartor {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    border-radius: 6px;
+
+}
+
+.title {
+    color: white;
+    background-color: purple;
+}
+
+tbody {
+    color: black;
+    background-color: aqua;
+}
+
+td:first-child {
+    background-color: chartreuse;
+}
+
+input {
+    margin-bottom: 12px;
+    font-size: 18px;
+
+
+}
+
+#date {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 12px auto;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+@media screen and (max-width:768px) {
+    form {
+        width: 100%;
+    }
+}

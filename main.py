@@ -1,8 +1,9 @@
 
-from cgitb import html
+from flask import Flask, render_template, request
 from datetime import date
-from unicodedata import name
 from flask import Flask, render_template
+from pm25 import get_pm25
+
 
 app = Flask(__name__)
 
@@ -70,7 +71,23 @@ def get_stock():
         {'分類': '香港恆生', '指數': '25,083.71'},
         {'分類': '上海綜合', '指數': '3,380.68'}
     ]
-    return render_template('./stock.html', stocks=stocks, date=get_date())
+    date = get_date()
+
+    return render_template('./stock.html', date=date, stocks=stocks)
 
 
-app.run(debug=True)
+@app.route('/pm25', methods=['GET', 'POST'])
+def pm25():
+    sort = False
+
+    if request.method == 'POST':
+        sort = True
+
+    date = get_date()
+    columns, values = get_pm25(sort)
+
+    return render_template('./pm25.html', **locals())
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
