@@ -18,8 +18,8 @@ stocks = [
 ]
 
 
-@app.route('/')
-@app.route('/<name>')
+@app.route('/index/')
+@app.route('/index/<name>')
 def index(name='GUEST'):
 
     date = get_date()
@@ -89,7 +89,7 @@ def pm25():
 
     return render_template('./pm25.html', **locals())
 
-
+@app.route('/')
 @app.route('/pm25-charts')
 def pm25_charts():
 
