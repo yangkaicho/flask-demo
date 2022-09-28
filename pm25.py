@@ -34,7 +34,7 @@ def get_countys():
     global df
     df = pd.read_csv(url).dropna()['county site pm25	datacreationdate'.split()]
 
-    return list(set(df['county']))
+    return sorted(set(df['county']))
 
 
 def get_county_pm25(county):

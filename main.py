@@ -93,7 +93,7 @@ def pm25():
 @app.route('/pm25-charts')
 def pm25_charts():
 
-    return render_template('./pm25-charts.html', countys=get_countys())
+    return render_template('./pm25-charts-bulma.html', countys=get_countys())
 
 
 @app.route('/pm25-json', methods=['POST'])

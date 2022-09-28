@@ -11,8 +11,14 @@ let dateEl = document.querySelector("#date");
 $(document).ready(() => {
     drawPM25();
     drawSixPM25();
-    drawCountyPM25("屏東縣");
+    drawCountyPM25("南投縣");
 });
+
+window.onresize = function () {
+    chart1.resize();
+    chart2.resize();
+    chart.resize();
+}
 
 $("#county_btn").click(() => {
     drawCountyPM25($("#select_county").val());
